@@ -1,0 +1,10 @@
+<div class="card" style="width: 18rem; margin: 10px; float: left">
+  <div class="card-body">
+    <h5 class="card-title" style="font-size: 20px"><%= note.title %></h5>
+    <h6 class="card-subtitle mb-2 text-muted"> <%= date_formatted(note.signal_date) %> </h6>
+    <p class="card-text" style="font-size: 18px"><%= note.body %></p>
+    <%= link_to('Delete', note_path(note), method: :delete, class: "btn btn-danger", style: 'color: yellow; margin-left: 10px; float: right') %>
+    <%= link_to('Edit', edit_note_path(note), class: "btn btn-info", style: "float: right") %>
+    
+  </div>
+</div>

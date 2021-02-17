@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Sketch</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <%- if(user_signed_in?) %>
+    <div class="container" style="float: right; right: 0px; width: 400px">
+      Hi! <b><%= current_user.nickname %></b>
+      <%= link_to("logout", destroy_user_session_path, method: :delete) %>
+    </div>
+    <% else %>
+      Please <%= link_to "login", new_user_session_path %>
+    <% end %>
+    <%= yield %>
+  </body>
+</html>

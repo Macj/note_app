@@ -1,0 +1,16 @@
+<p id="notice"><%= notice %></p>
+
+<div class='container-fluid' style="height: 80px; clear: both">
+  <h1 style="float:left">Notes</h1>
+  <%= link_to('New Note', new_note_path, class: "btn btn-info", style: "float:left; margin-left: 20px; margin-top: 5px") %>
+</div>
+
+<div class="container-fluid">
+  <% @notes.each do |note| %>
+    <%= render note %>
+  <% end %>
+</div>
+
+<br>
+
+
